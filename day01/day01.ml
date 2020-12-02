@@ -1,12 +1,6 @@
 open Base
 open Stdio
 
-module Option_syntax = struct
-  let ( let* ) x f = Option.bind ~f x
-
-  let return = Option.return
-end
-
 let wanted_sum = 2020
 
 let run_phase_1 nums =
@@ -37,7 +31,7 @@ let () =
   let nums = lines |> List.map ~f:Int.of_string in
 
   let res =
-    Option_syntax.(
+    Utils.Option_syntax.(
       let* res1 = run_phase_1 nums in
       let* res2 = run_phase_2 nums in
       return (res1, res2))
