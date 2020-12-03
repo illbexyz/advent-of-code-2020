@@ -1,3 +1,3 @@
-(executable
+(library
  (name day02)
- (libraries stdio base angstrom))
+ (libraries stdio base utils angstrom))

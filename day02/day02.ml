@@ -41,18 +41,20 @@ let is_valid_password_p2 (p : password_with_conf) =
     (Char.equal p.password.[p.range.max - 1] p.range.letter)
   |> not
 
-let () =
+let run_phase_1 passwords =
+  let res = passwords |> List.count ~f:is_valid_password_p1 in
+  Ok res
+
+let run_phase_2 passwords =
+  let res = passwords |> List.count ~f:is_valid_password_p2 in
+  Ok res
+
+let run () =
   let file_contents =
     filepath |> In_channel.with_file ~f:(fun file -> In_channel.input_all file)
   in
-  match Parser.run file_contents with
-  | Ok passwords ->
-      let valid_psw_count_phase1 =
-        passwords |> List.count ~f:is_valid_password_p1
-      in
-      printf "Phase 1: %i\n" valid_psw_count_phase1;
-      let valid_psw_count_phase2 =
-        passwords |> List.count ~f:is_valid_password_p2
-      in
-      printf "Phase 2: %i\n" valid_psw_count_phase2
-  | Error error -> printf "Error: %s\n" error
+  Utils.Result_syntax.(
+    let* passwords = Parser.run file_contents in
+    let* res1 = run_phase_1 passwords in
+    let* res2 = run_phase_2 passwords in
+    return (res1, res2))
