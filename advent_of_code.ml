@@ -4,7 +4,7 @@ open Stdio
 let runners =
   Map.of_alist_exn
     (module String)
-    [ ("day01", Day01.run); ("day02", Day02.run) ]
+    [ ("day01", Day01.run); ("day02", Day02.run); ("day03", Day03.run) ]
 
 let parse_day (args : string array) =
   match args with [| _; day |] -> Ok day | _ -> Error "Argument day not found"
