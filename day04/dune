@@ -1,0 +1,3 @@
+(library
+ (name day04)
+ (libraries stdio base))
