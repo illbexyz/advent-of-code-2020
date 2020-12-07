@@ -11,6 +11,7 @@ let runners =
       ("day04", Day04.run);
       ("day05", Day05.run);
       ("day06", Day06.run);
+      ("day07", Day07.run);
     ]
 
 let parse_day (args : string array) =
