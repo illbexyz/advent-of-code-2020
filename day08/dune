@@ -1,0 +1,3 @@
+(library
+ (name day08)
+ (libraries stdio base angstrom utils))
