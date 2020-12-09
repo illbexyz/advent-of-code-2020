@@ -1,8 +1,6 @@
 open Base
 open Stdio
 
-let filepath = "day03/input.txt"
-
 let slopes = [ (1, 1); (3, 1); (5, 1); (7, 1); (1, 2) ]
 
 module Forest = struct
@@ -28,7 +26,7 @@ module Forest = struct
   let string_of_cell = function Open -> "Open" | Tree -> "Tree"
 end
 
-let run () =
+let run filepath =
   let lines = In_channel.read_lines filepath in
   let forest = Forest.build lines in
   let start_pos = (0, 0) in

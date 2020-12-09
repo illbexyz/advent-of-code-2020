@@ -3,8 +3,6 @@ open Stdio
 
 let id x = x
 
-let filepath = "day05/input.txt"
-
 module Seat = struct
   type t = string * string
 
@@ -31,7 +29,7 @@ module Seat = struct
   let get_id ((row, col) : t) = (binary_to_id row * 8) + binary_to_id col
 end
 
-let run () =
+let run filepath =
   let seats = In_channel.read_lines filepath in
   let ids = seats |> List.map ~f:Seat.of_string |> List.map ~f:Seat.get_id in
   let sorted_ids = List.sort ids ~compare:Int.compare in

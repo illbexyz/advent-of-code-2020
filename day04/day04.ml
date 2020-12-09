@@ -1,8 +1,6 @@
 open Base
 open Stdio
 
-let filepath = "day04/input.txt"
-
 module Passport = struct
   type t = {
     birth_year : int option;
@@ -135,7 +133,7 @@ module Parser = struct
     |> List.map ~f:Passport.of_list
 end
 
-let run () =
+let run filepath =
   let lines = In_channel.read_lines filepath in
   let passports = Parser.parse_passports lines in
   let valid_passports_count_p1 =

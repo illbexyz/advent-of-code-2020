@@ -1,8 +1,6 @@
 open Base
 open Stdio
 
-let filepath = "day08/input.txt"
-
 module Computer = struct
   type instruction = Nop of int | Acc of int | Jmp of int
 
@@ -69,7 +67,7 @@ module Computer = struct
   end
 end
 
-let run () =
+let run filepath =
   let open Utils.Result_syntax in
   let input = In_channel.read_all filepath in
   let* program = Computer.Parser.run input in

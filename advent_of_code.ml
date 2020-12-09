@@ -13,21 +13,32 @@ let runners =
       ("day06", Day06.run);
       ("day07", Day07.run);
       ("day08", Day08.run);
+      ("day09", Day09.run);
     ]
 
-let parse_day (args : string array) =
-  match args with [| _; day |] -> Ok day | _ -> Error "Argument day not found"
+let parse_args (args : string array) =
+  match Array.to_list args with
+  | _ :: day :: files -> Ok (day, files)
+  | _ -> Error "Argument day not found"
 
-let run () =
+let run_with_file day file =
   Utils.Result_syntax.(
-    let* day = parse_day (Sys.get_argv ()) in
     let* runner =
       day |> Map.find runners
       |> Result.of_option ~error:"Missing runner in advent_of_code.ml"
     in
-    runner ())
+    runner file)
+
+let runs () =
+  let open Utils.Result_syntax in
+  let* day, files = parse_args (Sys.get_argv ()) in
+  List.map files ~f:(fun file ->
+      let* res_p1, res_p2 = run_with_file day file in
+      return
+        (Printf.sprintf "%s\nPhase 1: %i\nPhase 2: %i\n" file res_p1 res_p2))
+  |> Result.all
 
 let () =
-  match run () with
-  | Ok (p1, p2) -> printf "Phase 1: %i\nPhase 2: %i\n" p1 p2
-  | Error error -> print_endline error
+  match runs () with
+  | Ok boh -> List.iter boh ~f:(fun res -> print_endline res)
+  | Error error -> prerr_endline error

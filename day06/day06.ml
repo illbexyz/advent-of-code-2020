@@ -1,8 +1,6 @@
 open Base
 open Stdio
 
-let filepath = "day06/input.txt"
-
 module Set = struct
   include Set
 
@@ -13,7 +11,7 @@ module Set = struct
         if idx > 0 then inter acc curr else curr)
 end
 
-let run () =
+let run filepath =
   let lines = In_channel.read_lines filepath in
 
   let sets =

@@ -1,8 +1,6 @@
 open Base
 open Stdio
 
-let filepath = "day07/input.txt"
-
 module Bag = struct
   type t = { name : string; children : (int * string) list } [@@deriving show]
 
@@ -63,7 +61,7 @@ module Parser = struct
   let run contents = parse_string ~consume:Consume.Prefix bags contents
 end
 
-let run () =
+let run filepath =
   let open Utils.Result_syntax in
   let input = In_channel.read_all filepath in
   let* bags = Parser.run input in

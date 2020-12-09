@@ -1,8 +1,6 @@
 open Base
 open Stdio
 
-let filepath = "day02/input.txt"
-
 type range = { min : int; max : int; letter : char }
 
 type password_with_conf = { range : range; password : string }
@@ -49,7 +47,7 @@ let run_phase_2 passwords =
   let res = passwords |> List.count ~f:is_valid_password_p2 in
   Ok res
 
-let run () =
+let run filepath =
   let file_contents =
     filepath |> In_channel.with_file ~f:(fun file -> In_channel.input_all file)
   in
