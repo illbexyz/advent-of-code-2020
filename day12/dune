@@ -1,0 +1,5 @@
+(library
+ (name day12)
+ (libraries stdio base utils)
+ (preprocess
+  (pps ppx_deriving.show)))
