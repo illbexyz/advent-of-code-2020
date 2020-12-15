@@ -2,7 +2,7 @@
 
 Solutions for Advent of Code 2020 in OCaml.
 
-## Programs
+## Sources
 
 * [Day 1](https://github.com/illbexyz/advent-of-code-2020/blob/main/day01/day01.ml)
 * [Day 2](https://github.com/illbexyz/advent-of-code-2020/blob/main/day02/day02.ml)
@@ -15,6 +15,8 @@ Solutions for Advent of Code 2020 in OCaml.
 * [Day 9](https://github.com/illbexyz/advent-of-code-2020/blob/main/day09/day09.ml)
 * [Day 10](https://github.com/illbexyz/advent-of-code-2020/blob/main/day10/day10.ml)
 * [Day 11](https://github.com/illbexyz/advent-of-code-2020/blob/main/day11/day11.ml)
+* [Day 12](https://github.com/illbexyz/advent-of-code-2020/blob/main/day12/day12.ml)
+* [Day 15](https://github.com/illbexyz/advent-of-code-2020/blob/main/day15/day15.ml)
 
 ## Requirements
 
