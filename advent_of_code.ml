@@ -17,6 +17,7 @@ let runners =
       ("day10", Day10.run);
       ("day11", Day11.run);
       ("day12", Day12.run);
+      ("day13", Day13.run);
       ("day15", Day15.run);
     ]
 
@@ -38,8 +39,7 @@ let runs () =
   let* day, files = parse_args (Sys.get_argv ()) in
   List.map files ~f:(fun file ->
       let* res_p1, res_p2 = run_with_file day file in
-      return
-        (Printf.sprintf "%s\nPhase 1: %i\nPhase 2: %i\n" file res_p1 res_p2))
+      return (Printf.sprintf "%s\nPart 1: %i\nPart 2: %i\n" file res_p1 res_p2))
   |> Result.all
 
 let () =
