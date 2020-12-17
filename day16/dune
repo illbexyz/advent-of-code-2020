@@ -1,0 +1,3 @@
+(library
+ (name day16)
+ (libraries stdio base angstrom utils ppx_deriving))
