@@ -18,6 +18,7 @@ let runners =
       ("day11", Day11.run);
       ("day12", Day12.run);
       ("day13", Day13.run);
+      ("day14", Day14.run);
       ("day15", Day15.run);
       ("day16", Day16.run);
     ]

@@ -8,3 +8,4 @@ ignore
 _build
 **/.merlin
 day00
+.DS_Store
