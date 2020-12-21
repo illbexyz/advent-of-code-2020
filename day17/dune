@@ -1,0 +1,5 @@
+(library
+ (name day17)
+ (libraries stdio base angstrom utils ppx_deriving ppx_sexp_conv)
+ (preprocess
+  (pps ppx_deriving.show ppx_deriving.eq ppx_deriving.ord ppx_sexp_conv)))
