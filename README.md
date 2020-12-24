@@ -16,7 +16,12 @@ Solutions for Advent of Code 2020 in OCaml.
 * [Day 10](https://github.com/illbexyz/advent-of-code-2020/blob/main/day10/day10.ml)
 * [Day 11](https://github.com/illbexyz/advent-of-code-2020/blob/main/day11/day11.ml)
 * [Day 12](https://github.com/illbexyz/advent-of-code-2020/blob/main/day12/day12.ml)
+* [Day 13](https://github.com/illbexyz/advent-of-code-2020/blob/main/day13/day13.ml)
+* [Day 14](https://github.com/illbexyz/advent-of-code-2020/blob/main/day14/day14.ml)
 * [Day 15](https://github.com/illbexyz/advent-of-code-2020/blob/main/day15/day15.ml)
+* [Day 16](https://github.com/illbexyz/advent-of-code-2020/blob/main/day16/day16.ml)
+* [Day 17](https://github.com/illbexyz/advent-of-code-2020/blob/main/day17/day17.ml)
+* [Day 18](https://github.com/illbexyz/advent-of-code-2020/blob/main/day18/day18.ml)
 
 ## Requirements
 
@@ -26,5 +31,5 @@ Solutions for Advent of Code 2020 in OCaml.
 ## How to run
 
 ```
-$ dune exec ./advent_of_code.exe day01
+$ dune exec ./advent_of_code.exe day01 day01/input.txt
 ```
